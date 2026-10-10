@@ -141,14 +141,26 @@ document.addEventListener('DOMContentLoaded', function() {
         q.addEventListener('click', function() {
             const item = this.parentElement;
             const isActive = item.classList.contains('active');
-            
+
             document.querySelectorAll('.faq-item').forEach(function(faq) {
                 faq.classList.remove('active');
             });
-            
+
             if (!isActive) {
                 item.classList.add('active');
             }
+        });
+    });
+
+    // More Details toggle (Sales tab model cards)
+    document.querySelectorAll('.details-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const panelId = this.getAttribute('aria-controls');
+            const panel = panelId ? document.getElementById(panelId) : null;
+            if (!panel) return;
+            const open = panel.classList.toggle('open');
+            this.classList.toggle('open', open);
+            this.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
     });
 

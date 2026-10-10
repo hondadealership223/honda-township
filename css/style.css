@@ -1966,3 +1966,137 @@ footer {
         height: 60px;
     }
 }
+/* Model details (More Details expand) */
+.details-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 16px;
+    padding: 13px 16px;
+    background: var(--honda-light, #f5f5f5);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--honda-black, #111);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.details-toggle:hover,
+.details-toggle:focus-visible {
+    background: rgba(228, 5, 33, 0.06);
+    border-color: var(--honda-red);
+    color: var(--honda-red);
+    outline: none;
+}
+
+.details-toggle i {
+    font-size: 0.8rem;
+    transition: transform 0.25s ease;
+}
+
+.details-toggle.open i {
+    transform: rotate(180deg);
+}
+
+.model-details {
+    display: none;
+    margin-top: 16px;
+    padding: 26px 24px;
+    background: #fafafa;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.model-details.open {
+    display: block;
+}
+
+.model-details > h4 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.15rem;
+    color: var(--honda-red);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--honda-red);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.details-col h5 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px dashed #e2e2e2;
+    font-size: 0.88rem;
+}
+
+.details-list li:last-child {
+    border-bottom: none;
+}
+
+.details-list li .dk {
+    color: #666;
+    flex-shrink: 0;
+}
+
+.details-list li .dv {
+    font-weight: 600;
+    color: #111;
+    text-align: right;
+}
+
+.details-feats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details-feats li {
+    position: relative;
+    padding: 5px 0 5px 22px;
+    font-size: 0.88rem;
+    color: #333;
+}
+
+.details-feats li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--honda-red);
+    font-size: 0.75rem;
+}
+
+@media (max-width: 560px) {
+    .model-details {
+        padding: 18px 14px;
+    }
+}
