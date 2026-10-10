@@ -152,18 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // More Details toggle (Sales tab model cards)
-    document.querySelectorAll('.details-toggle').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            const panelId = this.getAttribute('aria-controls');
-            const panel = panelId ? document.getElementById(panelId) : null;
-            if (!panel) return;
-            const open = panel.classList.toggle('open');
-            this.classList.toggle('open', open);
-            this.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-    });
-
     // Prefill contact form from enquiry links (?car=&variant=&price= or ?offer=)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
