@@ -174,13 +174,11 @@ header {
 .logo-img {
     height: 80px;
     width: auto;
-    filter: drop-shadow(0 0 10px rgba(228, 5, 33, 0.45));
-    transition: transform 0.25s ease, filter 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
 .logo:hover .logo-img {
     transform: scale(1.06);
-    filter: drop-shadow(0 0 16px rgba(228, 5, 33, 0.7));
 }
 
 .logo-text {
